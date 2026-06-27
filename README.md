@@ -88,23 +88,23 @@ It is not a generic global sharpener. It is a guarded detail-recovery effect.
 
 Primary controls:
 
-- `Tuning Target`
-- `Depth Protect`
-- `Luma Protect`
-- `Stability Start`
-- `Stability Full`
-- `Sharpness Radius Pixels`
-- `Support Start`
-- `Support Full`
-- `Sharpness Strength`
-- `Harsh Edge Protection`
-- `Detail Start`
-- `Detail Full`
-- `Contribution Ceiling`
-- `Mask Boost`
-- `Mask Curve`
-- `Shadow Protection`
-- `Highlight Protection`
+- `Tuning Target` : [loads a sane starting profile]
+- `Depth Protect` : [reduces action where depth authority is weak]
+- `Luma Protect` : [holds back action on fragile brightness transitions]
+- `Stability Start` : [sets where stability gating begins to count]
+- `Stability Full` : [sets where stability gating reaches full authority]
+- `Sharpness Radius Pixels` : [sets how wide the detail search reaches]
+- `Support Start` : [sets where surface support begins to count]
+- `Support Full` : [sets where surface support reaches full authority]
+- `Sharpness Strength` : [makes the reclaimed detail stronger]
+- `Harsh Edge Protection` : [suppresses sharpening on big hard edges]
+- `Detail Start` : [sets the minimum detail level that starts to pass]
+- `Detail Full` : [sets the detail level that reaches full effect]
+- `Contribution Ceiling` : [caps how much sharpening contribution can be applied]
+- `Mask Boost` : [amplifies the admitted sharpness mask]
+- `Mask Curve` : [reshapes the mask response]
+- `Shadow Protection` : [holds back action in dark regions]
+- `Highlight Protection` : [holds back action in bright regions]
 
 Useful debug views:
 
@@ -146,25 +146,25 @@ It is not a blunt edge detector. It is a guided ink pass with explicit contour c
 
 Primary controls:
 
-- `Tuning Target`
-- `Depth Protect`
-- `Luma Protect`
-- `Stability Start`
-- `Stability Full`
-- `Ink Radius Pixels`
-- `Ink Strength`
-- `Edge Ink`
-- `Detail Ink`
-- `Object Contour Carry`
-- `Object Contour Darken`
-- `Object Contour Headroom`
-- `Surface Support Outline`
-- `Surface Outline Strength`
-- `Line Start`
-- `Line Full`
-- `Deep Shadow Protection`
-- `Highlight Protection`
-- `Ink Darkening Ceiling`
+- `Tuning Target` : [loads a sane starting profile]
+- `Depth Protect` : [reduces line action where depth authority is weak]
+- `Luma Protect` : [holds back ink on fragile brightness transitions]
+- `Stability Start` : [sets where stability gating begins to count]
+- `Stability Full` : [sets where stability gating reaches full authority]
+- `Ink Radius Pixels` : [sets how wide the line search reaches]
+- `Ink Strength` : [makes the image darker where ink is admitted]
+- `Edge Ink` : [adds darkening from stable edge evidence]
+- `Detail Ink` : [adds darkening from fine detail evidence]
+- `Object Contour Carry` : [lets object-boundary evidence feed the ink mask]
+- `Object Contour Darken` : [adds extra darkening on admitted object borders]
+- `Object Contour Headroom` : [limits how much contour darkening can accumulate]
+- `Surface Support Outline` : [adds direct surface-break outlines into the image]
+- `Surface Outline Strength` : [controls how strongly the support outline shows up]
+- `Line Start` : [sets the minimum line evidence that starts to pass]
+- `Line Full` : [sets the line evidence that reaches full effect]
+- `Deep Shadow Protection` : [holds back ink in very dark regions]
+- `Highlight Protection` : [holds back ink in bright regions]
+- `Ink Darkening Ceiling` : [caps the total darkening the ink pass can apply]
 
 Useful debug views:
 
@@ -426,6 +426,5 @@ Important points:
 - ReShade runtime/framework files are external dependencies.
 - The local reference copy of `ReShade.fxh` inspected during staging carried `SPDX-License-Identifier: CC0-1.0`.
 - If a future package vendors any ReShade framework file, preserve that upstream file's license/SPDX notice exactly.
-
 
 
