@@ -88,35 +88,39 @@ It is not a generic global sharpener. It is a guarded detail-recovery effect.
 
 Primary controls:
 
-- `Tuning Target` : [loads a sane starting profile]
-- `Depth Protect` : [reduces action where depth authority is weak]
-- `Luma Protect` : [holds back action on fragile brightness transitions]
-- `Stability Start` : [sets where stability gating begins to count]
-- `Stability Full` : [sets where stability gating reaches full authority]
-- `Sharpness Radius Pixels` : [sets how wide the detail search reaches]
-- `Support Start` : [sets where surface support begins to count]
-- `Support Full` : [sets where surface support reaches full authority]
-- `Sharpness Strength` : [makes the reclaimed detail stronger]
-- `Harsh Edge Protection` : [suppresses sharpening on big hard edges]
-- `Detail Start` : [sets the minimum detail level that starts to pass]
-- `Detail Full` : [sets the detail level that reaches full effect]
-- `Contribution Ceiling` : [caps how much sharpening contribution can be applied]
-- `Mask Boost` : [amplifies the admitted sharpness mask]
-- `Mask Curve` : [reshapes the mask response]
-- `Shadow Protection` : [holds back action in dark regions]
-- `Highlight Protection` : [holds back action in bright regions]
+| Control | What it does |
+|---|---|
+| `Tuning Target` | Loads a sane starting profile. |
+| `Depth Protect` | Reduces action where depth authority is weak. |
+| `Luma Protect` | Holds back action on fragile brightness transitions. |
+| `Stability Start` | Sets where stability gating begins to count. |
+| `Stability Full` | Sets where stability gating reaches full authority. |
+| `Sharpness Radius Pixels` | Sets how wide the detail search reaches. |
+| `Support Start` | Sets where surface support begins to count. |
+| `Support Full` | Sets where surface support reaches full authority. |
+| `Sharpness Strength` | Makes the reclaimed detail stronger. |
+| `Harsh Edge Protection` | Suppresses sharpening on big hard edges. |
+| `Detail Start` | Sets the minimum detail level that starts to pass. |
+| `Detail Full` | Sets the detail level that reaches full effect. |
+| `Contribution Ceiling` | Caps how much sharpening contribution can be applied. |
+| `Mask Boost` | Amplifies the admitted sharpness mask. |
+| `Mask Curve` | Reshapes the mask response. |
+| `Shadow Protection` | Holds back action in dark regions. |
+| `Highlight Protection` | Holds back action in bright regions. |
 
 Useful debug views:
 
-- `Reuse Ready`
-- `Depth Confidence`
-- `Addressed Neighbor Coverage`
-- `Surface Support`
-- `Detail Field`
-- `Sharpness Mask`
-- `Applied Sharpness`
-- `Harsh Edge Protection`
-- `Source Preserve Delta`
+| Debug view | What to inspect |
+|---|---|
+| `Reuse Ready` | Shows whether the pixel has enough authority to reuse neighborhood evidence. |
+| `Depth Confidence` | Shows whether depth is available and believable enough to guide the pass. |
+| `Addressed Neighbor Coverage` | Shows whether the local sampling footprint is finding usable neighbors. |
+| `Surface Support` | Shows same-surface support before detail is allowed to act. |
+| `Detail Field` | Shows the signed local detail signal before masking and contribution limits. |
+| `Sharpness Mask` | Shows the admitted area where detail reclamation may apply. |
+| `Applied Sharpness` | Shows the actual lightness contribution before the final composite. |
+| `Harsh Edge Protection` | Shows where large edges are suppressing sharpening. |
+| `Source Preserve Delta` | Shows how far the output is moving away from the source image. |
 
 Expected personality:
 
@@ -146,40 +150,44 @@ It is not a blunt edge detector. It is a guided ink pass with explicit contour c
 
 Primary controls:
 
-- `Tuning Target` : [loads a sane starting profile]
-- `Depth Protect` : [reduces line action where depth authority is weak]
-- `Luma Protect` : [holds back ink on fragile brightness transitions]
-- `Stability Start` : [sets where stability gating begins to count]
-- `Stability Full` : [sets where stability gating reaches full authority]
-- `Ink Radius Pixels` : [sets how wide the line search reaches]
-- `Ink Strength` : [makes the image darker where ink is admitted]
-- `Edge Ink` : [adds darkening from stable edge evidence]
-- `Detail Ink` : [adds darkening from fine detail evidence]
-- `Object Contour Carry` : [lets object-boundary evidence feed the ink mask]
-- `Object Contour Darken` : [adds extra darkening on admitted object borders]
-- `Object Contour Headroom` : [limits how much contour darkening can accumulate]
-- `Surface Support Outline` : [adds direct surface-break outlines into the image]
-- `Surface Outline Strength` : [controls how strongly the support outline shows up]
-- `Line Start` : [sets the minimum line evidence that starts to pass]
-- `Line Full` : [sets the line evidence that reaches full effect]
-- `Deep Shadow Protection` : [holds back ink in very dark regions]
-- `Highlight Protection` : [holds back ink in bright regions]
-- `Ink Darkening Ceiling` : [caps the total darkening the ink pass can apply]
+| Control | What it does |
+|---|---|
+| `Tuning Target` | Loads a sane starting profile. |
+| `Depth Protect` | Reduces line action where depth authority is weak. |
+| `Luma Protect` | Holds back ink on fragile brightness transitions. |
+| `Stability Start` | Sets where stability gating begins to count. |
+| `Stability Full` | Sets where stability gating reaches full authority. |
+| `Ink Radius Pixels` | Sets how wide the line search reaches. |
+| `Ink Strength` | Makes the image darker where ink is admitted. |
+| `Edge Ink` | Adds darkening from stable edge evidence. |
+| `Detail Ink` | Adds darkening from fine detail evidence. |
+| `Object Contour Carry` | Lets object-boundary evidence feed the ink mask. |
+| `Object Contour Darken` | Adds extra darkening on admitted object borders. |
+| `Object Contour Headroom` | Limits how much contour darkening can accumulate. |
+| `Surface Support Outline` | Adds direct surface-break outlines into the image. |
+| `Surface Outline Strength` | Controls how strongly the support outline shows up. |
+| `Line Start` | Sets the minimum line evidence that starts to pass. |
+| `Line Full` | Sets the line evidence that reaches full effect. |
+| `Deep Shadow Protection` | Holds back ink in very dark regions. |
+| `Highlight Protection` | Holds back ink in bright regions. |
+| `Ink Darkening Ceiling` | Caps the total darkening the ink pass can apply. |
 
 Useful debug views:
 
-- `Reuse Ready`
-- `Depth Confidence`
-- `Addressed Neighbor Coverage`
-- `Surface Support`
-- `Edge Ink Field`
-- `Detail Ink Field`
-- `Ink Mask`
-- `Applied Ink`
-- `Tone Protection`
-- `Source Preserve Delta`
-- `Object Contour Field`
-- `Surface Support Outline`
+| Debug view | What to inspect |
+|---|---|
+| `Reuse Ready` | Shows whether the pixel has enough authority to reuse neighborhood evidence. |
+| `Depth Confidence` | Shows whether depth is available and believable enough to guide the pass. |
+| `Addressed Neighbor Coverage` | Shows whether the local sampling footprint is finding usable neighbors. |
+| `Surface Support` | Shows same-surface support before ink is allowed to act. |
+| `Edge Ink Field` | Shows edge-driven line evidence before final admission. |
+| `Detail Ink Field` | Shows fine-detail line evidence before final admission. |
+| `Ink Mask` | Shows the admitted area where ink darkening may apply. |
+| `Applied Ink` | Shows the actual darkening contribution before the final composite. |
+| `Tone Protection` | Shows where dark shadows or bright highlights are suppressing ink. |
+| `Source Preserve Delta` | Shows how far the output is moving away from the source image. |
+| `Object Contour Field` | Shows object-boundary evidence before contour carry and darkening. |
+| `Surface Support Outline` | Shows direct surface-break outlines before they are added to the image. |
 
 Expected personality:
 
@@ -426,5 +434,4 @@ Important points:
 - ReShade runtime/framework files are external dependencies.
 - The local reference copy of `ReShade.fxh` inspected during staging carried `SPDX-License-Identifier: CC0-1.0`.
 - If a future package vendors any ReShade framework file, preserve that upstream file's license/SPDX notice exactly.
-
 
