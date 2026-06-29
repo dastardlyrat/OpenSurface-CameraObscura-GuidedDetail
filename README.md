@@ -1,3 +1,4 @@
+<img width="2560" height="1440" alt="XCom2 2026-06-26 14-33-54_585" src="https://github.com/user-attachments/assets/3f346622-f96e-4efb-9a3a-bf788af50e57" />
 # OpenSurface Camera Obscura Guided Detail
 
 OpenSurface Camera Obscura Guided Detail is a production-staging shader unit for ReShade. It contains two paired effects that work from the same idea: do not enhance every contrast signal blindly; first ask whether the signal belongs to a coherent surface.
