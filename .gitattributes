@@ -1,0 +1,6 @@
+* text=auto eol=lf
+
+*.md text eol=lf
+*.fx text eol=lf
+*.fxh text eol=lf
+LICENSE text eol=lf
