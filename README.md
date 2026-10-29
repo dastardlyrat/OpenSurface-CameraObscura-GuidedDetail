@@ -1,9 +1,19 @@
 <img width="2560" height="1440" alt="XCom2 2026-06-26 14-33-54_585" src="https://github.com/user-attachments/assets/3f346622-f96e-4efb-9a3a-bf788af50e57" />
+
 # OpenSurface Camera Obscura Guided Detail
 
 OpenSurface Camera Obscura Guided Detail is a production-staging shader unit for ReShade. It contains two paired effects that work from the same idea: do not enhance every contrast signal blindly; first ask whether the signal belongs to a coherent surface.
 
 This package is the first public-facing staging shape for the Camera Obscura guided tonal-detail lane.
+
+**Status:** a small source staging unit with a compile and visual test procedure.
+Read the effect and its diagnostics together; a preset name or capability label
+does not establish a successful runtime test on a particular system.
+
+**Explore:** [The pair](#the-short-version) · [Package layout](#package-layout) ·
+[Shared method](#shared-method) · [Installation](#installation-for-local-reshade-testing) ·
+[Compile checklist](#first-compile-checklist) ·
+[Development](#developing-the-guided-pair) · [License](#license-posture).
 
 ## The short version
 
@@ -43,9 +53,6 @@ OpenSurface/CameraObscura/GuidedDetail/
 ├─ header/
 │  ├─ OSCO_GuidedDetail_Common.fxh
 │  └─ OSCO_GuidedDetail_DebugVisibility.fxh
-├─ docs/
-│  ├─ HEADER_PRUNE_REPORT_2026-06-26.md
-│  └─ staging_manifest.json
 ├─ licenses/
 │  └─ THIRD_PARTY_NOTICES.md
 ├─ LICENSE
@@ -414,6 +421,30 @@ OSCO_GuidedInkLines.fx
 ```
 
 The public name carries intent. The internal prefix keeps shader symbols compact enough for practical development.
+
+## Developing the guided pair
+
+The current package contains the two effects, two headers, this README, the
+license, and the third-party notice. The layout above describes the files
+actually bundled here.
+
+| Area | Starting point |
+|---|---|
+| Detail reclamation | [OSCO_GuidedDetailReclamation.fx](effects/OSCO_GuidedDetailReclamation.fx) |
+| Ink lines | [OSCO_GuidedInkLines.fx](effects/OSCO_GuidedInkLines.fx) |
+| Shared support and processing | [OSCO_GuidedDetail_Common.fxh](header/OSCO_GuidedDetail_Common.fxh) |
+| Diagnostic visibility | [OSCO_GuidedDetail_DebugVisibility.fxh](header/OSCO_GuidedDetail_DebugVisibility.fxh) |
+| External runtime/framework notices | [THIRD_PARTY_NOTICES.md](licenses/THIRD_PARTY_NOTICES.md) |
+
+Keep the shared admission/support decisions and the applied contribution
+inspectable when changing either effect. Preserve the sibling `effects/` and
+`header/` layout unless an include-path change is deliberate.
+
+Use the compile checklist first, then the separate live test orders for detail
+and ink. Reports should state the effect, tuning target, visibility mode, first
+compile problem, and observed output. The procedures in this README are the
+acceptance work to perform; this documentation update does not claim they have
+been newly completed.
 
 ## License posture
 
