@@ -29,6 +29,16 @@ In plain language:
 - **Guided Detail Reclamation** recovers stable fine detail without acting like a global sharpener.
 - **Guided Ink Lines** darkens admitted line, contour, and support-break evidence without acting like a blunt cartoon outline pass.
 
+## XCOM 2 engineering — Guided Detail with Ink Lines
+
+![XCOM 2 engineering-room capture: Guided Detail Reclamation with Guided Ink Lines added](docs/images/xcom2-engineering-guided-detail-with-ink-2026-06-24.png)
+
+User-supplied XCOM 2 engineering-room reference dated **2026-06-24**, identified by the operator as **Camera Obscura Guided Detail Reclamation with Guided Ink Lines added**. It is a **combined-effect visual reference**, not an isolated reclamation-only measurement or an independently verified before/after comparison.
+
+Inspect character/clothing contours, engineering equipment and cabinet boundaries, console lines, fine surface texture, and potential over-inking. Runtime settings, depth-buffer state, individual pass contribution and the participation of any wider preset were not supplied or measured; the image alone does not verify them.
+
+The [image provenance record](docs/images/README.md) retains the source PNG checksum, exact displayed-pixel equivalence of the grayscale storage copy, and limits of the claim. The image is an observation specimen, not new evidence that the effect compiled or was validated on this system.
+
 ## Why this exists
 
 Most sharpening and ink effects begin with a simple question:
