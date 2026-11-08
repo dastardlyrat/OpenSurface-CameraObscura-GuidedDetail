@@ -1,4 +1,4 @@
-<img width="2560" height="1440" alt="XCom2 2026-06-26 14-33-54_585" src="https://github.com/user-attachments/assets/3f346622-f96e-4efb-9a3a-bf788af50e57" />
+![XCOM 2 engineering — Camera Obscura Guided Detail Reclamation with Ink Lines](docs/images/xcom2-engineering-guided-detail-with-ink-2026-06-24.png)
 
 # OpenSurface Camera Obscura Guided Detail
 
@@ -31,7 +31,7 @@ In plain language:
 
 ## XCOM 2 engineering — Guided Detail with Ink Lines
 
-![XCOM 2 engineering-room capture: Guided Detail Reclamation with Guided Ink Lines added](docs/images/xcom2-engineering-guided-detail-with-ink-2026-06-24.png)
+[View the original-resolution Guided Detail + Ink reference](docs/images/xcom2-engineering-guided-detail-with-ink-2026-06-24.png).
 
 User-supplied XCOM 2 engineering-room reference dated **2026-06-24**, identified by the operator as **Camera Obscura Guided Detail Reclamation with Guided Ink Lines added**. It is a **combined-effect visual reference**, not an isolated reclamation-only measurement or an independently verified before/after comparison.
 
