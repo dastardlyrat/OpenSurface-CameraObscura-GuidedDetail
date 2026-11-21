@@ -477,3 +477,10 @@ Important points:
 - The local reference copy of `ReShade.fxh` inspected during staging carried `SPDX-License-Identifier: CC0-1.0`.
 - If a future package vendors any ReShade framework file, preserve that upstream file's license/SPDX notice exactly.
 
+## Project directory and related work
+
+[Browse the dastardlyrat project directory](https://dastardlyrat.github.io/).
+
+- [OpenSurface](https://github.com/dastardlyrat/OpenSurface)
+- [Lazara-Reshade-Revival-Package](https://github.com/dastardlyrat/Lazara-Reshade-Revival-Package)
+- [reshade-screenshot-gallery](https://github.com/dastardlyrat/reshade-screenshot-gallery)
