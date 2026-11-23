@@ -484,3 +484,7 @@ Important points:
 - [OpenSurface](https://github.com/dastardlyrat/OpenSurface)
 - [Lazara-Reshade-Revival-Package](https://github.com/dastardlyrat/Lazara-Reshade-Revival-Package)
 - [reshade-screenshot-gallery](https://github.com/dastardlyrat/reshade-screenshot-gallery)
+
+## Public cross-repository discovery
+
+**Public research directory:** [topic map](https://dastardlyrat.github.io/research.html) · [machine-oriented navigation](https://dastardlyrat.github.io/machine.html) · [dated structured catalog](https://dastardlyrat.github.io/research-index.json). The directory indexes public entry points for source-led study; it is not a license override, consent to personal-methodology fingerprinting, or runtime authorization.
